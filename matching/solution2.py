@@ -8,36 +8,43 @@ class Person(object):
         self.prefs = None
         self.partner = None
 
+    def set_prefs(self, prefs):
+        prefs =  [int(pref) - 1 for pref in prefs]
+        if self.id % 2 == 0:
+            self.prefs = prefs
+        else:
+            self.prefs = {id: n-rank for (rank, id) in enumerate(prefs)}
+
 mw = []
 free_m = []
 n = 0
 
-def pass_preferences(lineNr):
-    for (linenumber, line) in enumerate(stdin, lineNr):
+def parse_preferences(start_index):
+    for (line_number, line) in enumerate(stdin, start_index):
         split = line.replace(" \n", "").split(" ")
         id = int(split[0][:-1]) - 1
-        prefs = [int(pref) - 1 for pref in split[1:]]
-        if id % 2 == 1:
-            prefs = {id: n-rank for (rank, id) in enumerate(prefs)}
-        mw[id].prefs = prefs
+        prefs = split[1:]
+        person = mw[id]
+        person.set_prefs(prefs)
 
-def pass_names(lineNr):
-    for (linenumber, line) in enumerate(stdin, lineNr):
+def parse_names(start_index):
+    for (line_number, line) in enumerate(stdin, start_index):
         if line == "\n":
-            pass_preferences(linenumber)
+            parse_preferences(line_number)
+            break
         else:
             person = Person(line)
             mw.append(person)
             if person.id % 2 == 0: free_m.append(person.id)
 
-def pass_start():     
-    for (linenumber, line) in enumerate(stdin):
+def parse_start():     
+    for (line_number, line) in enumerate(stdin):
         if line[0] == "#":
             pass
         elif line[0] == "n":
             n = int(line[2:])
-            pass_names(linenumber)
-
+            parse_names(line_number)
+        else: break
 
 def run_Gale_Shapley():
     while len(free_m) > 0 and len(mw[free_m[0]].prefs) > 0:
@@ -59,6 +66,6 @@ def print_result():
         if p.id % 2 == 0:
             print(p.name + " -- " + p.partner.name)
 
-pass_start()
+parse_start()
 run_Gale_Shapley()
 print_result()
