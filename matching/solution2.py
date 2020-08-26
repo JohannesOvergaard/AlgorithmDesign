@@ -15,16 +15,16 @@ class Person(object):
         else:
             self.prefs = {id: n-rank for (rank, id) in enumerate(prefs)}
 
-mw = []
+persons = []
 free_m = []
 n = 0
 
 def parse_preferences(start_index):
-    for (line_number, line) in enumerate(stdin, start_index):
+    for (_, line) in enumerate(stdin, start_index):
         split = line.replace(" \n", "").split(" ")
         id = int(split[0][:-1]) - 1
         prefs = split[1:]
-        person = mw[id]
+        person = persons[id]
         person.set_prefs(prefs)
 
 def parse_names(start_index):
@@ -34,7 +34,7 @@ def parse_names(start_index):
             break
         else:
             person = Person(line)
-            mw.append(person)
+            persons.append(person)
             if person.id % 2 == 0: free_m.append(person.id)
 
 def parse_start():     
@@ -47,9 +47,9 @@ def parse_start():
         else: break
 
 def run_Gale_Shapley():
-    while len(free_m) > 0 and len(mw[free_m[0]].prefs) > 0:
-        m = mw[free_m[0]]
-        w = mw[m.prefs.pop(0)]
+    while len(free_m) > 0 and len(persons[free_m[0]].prefs) > 0:
+        m = persons[free_m[0]]
+        w = persons[m.prefs.pop(0)]
 
         if w.partner is None:
             w.partner = m
@@ -62,7 +62,7 @@ def run_Gale_Shapley():
             m.partner = w
 
 def print_result():
-    for p in mw:
+    for p in persons:
         if p.id % 2 == 0:
             print(p.name + " -- " + p.partner.name)
 
