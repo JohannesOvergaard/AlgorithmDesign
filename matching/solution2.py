@@ -7,10 +7,11 @@ class Person(object):
         self.name = name.rsplit()[0]
         self.prefs = None
         self.partner = None
+        self.is_proposer = self.id % 2 == 0
 
     def set_prefs(self, prefs):
         prefs =  [int(pref) - 1 for pref in prefs]
-        if self.id % 2 == 0:
+        if self.is_proposer:
             self.prefs = prefs
         else:
             self.prefs = {id: n-rank for (rank, id) in enumerate(prefs)}
@@ -35,8 +36,7 @@ def parse_names(start_index):
         else:
             person = Person(line)
             persons.append(person)
-            if person.id % 2 == 0: free_m.append(person.id)
-
+            if person.is_proposer: free_m.append(person.id)
 def parse_start():     
     for (line_number, line) in enumerate(stdin):
         if line[0] == "#":
