@@ -41,15 +41,13 @@ def closest_point(lst):
 
         min_distance = min(min_distance_left , min_distance_right)
         
-        mid_list_left = filter(lambda p: p.x > l_point.x-min_distance , left)
-        mid_list_right = filter(lambda p: p.x < l_point.x+min_distance , right)
+        mid_list = filter(lambda p: abs(p.x-l_point.x) < min_distance , lst)
 
-        mid_list_left = sorted(mid_list_left,key=lambda p:p.y)
-        mid_list_right = sorted(mid_list_right,key=lambda p:p.y)
+        mid_list = sorted(mid_list,key=lambda p:p.y)
 
-        for l_point in mid_list_left:
-            for r_point in mid_list_right:
-                v = l_point.distance(r_point)
+        for i in range(len(mid_list)):
+            for j in range(1,min(16,len(mid_list[i:]))):
+                v = mid_list[i].distance(mid_list[i+j])
                 min_distance = min(min_distance,v)
         
         return min_distance
