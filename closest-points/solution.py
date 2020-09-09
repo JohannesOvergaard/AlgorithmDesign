@@ -36,17 +36,8 @@ def closest_point(lst):
         l_point = lst[l]
         left, right = lst[0:l] , lst[l:]
 
-        min_distance_left , left_points = closest_point(left)
-        min_distance_right , right_points = closest_point(right)
-
-        closest_points = []
-
-        if min_distance_left < min_distance_right:
-            min_distance = min_distance_left
-            closest_points = left_points
-        else:
-            min_distance = min_distance_right
-            closest_points = right_points
+        min_distance_left = closest_point(left)
+        min_distance_right = closest_point(right)
 
         min_distance = min(min_distance_left , min_distance_right)
         
@@ -59,18 +50,16 @@ def closest_point(lst):
         for l_point in mid_list_left:
             for r_point in mid_list_right:
                 v = l_point.distance(r_point)
-                if v < min_distance:
-                    min_distance = v
-                    closest_points = [l_point,r_point]
+                min_distance = min(min_distance,v)
         
-        return min_distance , closest_points
+        return min_distance
 
     elif len(lst) == 2:
-        return lst[0].distance(lst[1]) , lst
+        return lst[0].distance(lst[1])
     else:
-        return float("inf") , lst
+        return float("inf")
         
 parse()
 sorted_points = sorted(points,key=lambda p: p.x)
-distance , _ = closest_point(sorted_points)
+distance = closest_point(sorted_points)
 print(f"{len(sorted_points)} {distance}")
