@@ -1,8 +1,6 @@
 from sys import stdin
 from math import sqrt
 
-points = []
-
 class Point(object):
     def __init__(self,line):
         self.id = line[0]
@@ -16,6 +14,7 @@ class Point(object):
         return f"{self.id}: {self.x} , {self.y}"
 
 def parse():
+    points = []
     parsing_points = False
     for linenumber,line in enumerate(stdin):
         split = line.rsplit()
@@ -29,6 +28,7 @@ def parse():
             break
         else:
             points.append(Point(split))
+    return points
 
 def closest_point(lst):
     if len(lst) > 2:
@@ -59,7 +59,7 @@ def closest_point(lst):
     else:
         return float("inf")
         
-parse()
+points = parse()
 sorted_points = sorted(points,key=lambda p: p.x)
 distance = closest_point(sorted_points)
 print(f"{len(sorted_points)} {distance}")
