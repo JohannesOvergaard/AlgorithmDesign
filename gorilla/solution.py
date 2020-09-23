@@ -76,7 +76,8 @@ def trace_back(M, o1, o2, penalties):
             results_o1 += "-"
             results_o2 += o2.gene[j]
 
-    return results_o1[::-1],results_o2[::-1]
+    # Reversing the strings since they are constructed in reverse order
+    return results_o1[::-1], results_o2[::-1]
 
 penalties = read_penalties("data/BLOSUM62.txt")
 organisms = parse_input()
