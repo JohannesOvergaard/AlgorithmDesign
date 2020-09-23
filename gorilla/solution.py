@@ -15,7 +15,7 @@ def read_penalties(filename):
             continue
         split = line.rsplit()
         if index == 6:
-            penalties = {x:{}for x in split}
+            penalties = {x:{} for x in split}
             letters = split
             continue
         penalties[split[0]] = {x:int(v) for (x, v) in zip(letters, split[1:])}
@@ -35,8 +35,8 @@ def parse_input():
             current_organism.gene += line.replace("\n","")
     return organisms
 
-def gap_penalty(symbol):
-    return penalties["*"][symbol]
+def gap_penalty(letter):
+    return penalties["*"][letter]
 
 def construct_table(o1, o2, penalties):
     m,n = len(o1.gene), len(o2.gene)
