@@ -57,17 +57,17 @@ def construct_table(o1, o2, penalties):
 
     return M
 
-def trace_back(M, o1, o2, blosum):
+def trace_back(M, o1, o2, penalties):
     i, j = len(o1.gene), len(o2.gene)
     results_o1, results_o2 = "", ""
 
     while i > 0 or j > 0:
-        if M[i][j] == M[i-1][j-1] + blosum[o1.gene[i-1]][o2.gene[j-1]] :
+        if M[i][j] == M[i-1][j-1] + penalties[o1.gene[i-1]][o2.gene[j-1]] :
             i-=1
             j-=1
             results_o1 += o1.gene[i]
             results_o2 += o2.gene[j]
-        elif M[i][j] == M[i-1][j] + blosum[o1.gene[i-1]]["*"]:
+        elif M[i][j] == M[i-1][j] + penalties[o1.gene[i-1]]["*"]:
             i -= 1
             results_o1 += o1.gene[i]
             results_o2 += "-"
