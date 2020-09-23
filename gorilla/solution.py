@@ -1,5 +1,7 @@
 from sys import stdin
 
+# Group K's implementation. (Beautiful)
+
 class Organism(object):
     def __init__(self,name):
         self.name = name
