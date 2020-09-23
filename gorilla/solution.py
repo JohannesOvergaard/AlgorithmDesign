@@ -52,28 +52,22 @@ def sequence_alignment(o1,o2,blosum_map):
             gap1 = blosum_map["*"][o1.gene[i]] + M[i][j+1]
             gap2 = blosum_map["*"][o2.gene[j]] + M[i+1][j]
             M[i+1][j+1] = max(alignment,gap1,gap2)
+
     return M
 
-def trace_back(M,o1,o2):
+def trace_back(M,o1,o2, blosum):
     i = len(o1.gene)
     j = len(o2.gene)
     results_o1 = ""
     results_o2 = ""
-    [print(v) for v in M]
-    while i != 0 and j != 0:
-        alignment = M[i-1][j-1]
-        gap1 = M[i-1][j]
-        gap2 = M[i][j-1]
-        maximum = max(alignment,gap1,gap2)
+    while i > 0 or j > 0:
 
-        #print(i,j, o1.gene[i-1], o2.gene[j-1])
-        #print(" ", alignment, gap1, gap2)
-        if alignment == maximum:
+        if M[i][j] == M[i-1][j-1] + blosum[o1.gene[i-1]][o2.gene[j-1]] :
             i-=1
             j-=1
             results_o1 += o1.gene[i]
             results_o2 += o2.gene[j]
-        elif gap1 == maximum:
+        elif M[i][j] == M[i-1][j] + blosum[o1.gene[i-1]]["*"]:
             i -= 1
             results_o1 += o1.gene[i]
             results_o2 += "-"
@@ -81,8 +75,7 @@ def trace_back(M,o1,o2):
             j-=1
             results_o1 += "-"
             results_o2 += o2.gene[j]
-        #print("  "+results_o1)
-        #print("  "+results_o2)
+
     return results_o1[::-1],results_o2[::-1]
 
 blosum_map = read_blosum("data/BLOSUM62.txt")
@@ -91,7 +84,7 @@ for i in range(len(organisms)):
     for j in range(i+1, len(organisms)):
                 
         M = sequence_alignment(organisms[i],organisms[j],blosum_map)
-        res1,res2 = trace_back(M,organisms[i],organisms[j])
+        res1,res2 = trace_back(M,organisms[i],organisms[j], blosum_map)
         print(organisms[i].name + "--" + organisms[j].name + ": "+ str(M[-1][-1]))
         print(res1)
         print(res2)
