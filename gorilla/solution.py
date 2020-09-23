@@ -44,10 +44,6 @@ def parse_input():
             current_organism.gene += line.replace("\n","")
     return organisms
 
-def gap_penalty(letter):
-    return penalties["*"][letter]
-
-
 def construct_table(o1, o2, penalties):
     """
     Using the naive iterative implementation (bottom up), constructs
@@ -62,17 +58,17 @@ def construct_table(o1, o2, penalties):
     
     #Filling the first row and column with successively larger gap penalties
     for i in range(0, m):
-        M[i+1][0] = M[i][0] + gap_penalty(o1.gene[i]) 
+        M[i+1][0] = M[i][0] + penalties["*"][o1.gene[i]]
     for j in range(0, n):
-        M[0][j+1] = M[0][j] + gap_penalty(o2.gene[j]) 
+        M[0][j+1] = M[0][j] + penalties["*"][o2.gene[j]]
 
     #For each cell, choose the optimal penalty
     for i in range(m):
         for j in range(n):
             penalty = penalties[o1.gene[i]][o2.gene[j]]
             alignment = penalty + M[i][j]
-            gap1 = gap_penalty(o1.gene[i]) + M[i][j+1]
-            gap2 = gap_penalty(o2.gene[j]) + M[i+1][j]
+            gap1 = penalties["*"][o1.gene[i]] + M[i][j+1]
+            gap2 = penalties["*"][o2.gene[j]] + M[i+1][j]
             M[i+1][j+1] = max(alignment,gap1,gap2)
 
     return M
@@ -93,7 +89,7 @@ def trace_back(M, o1, o2, penalties):
             results_o1 += o1.gene[i]
             results_o2 += o2.gene[j]
         #If a gap was introduced on the second gene
-        elif M[i][j] == M[i-1][j] + gap_penalty(o1.gene[i-1]):
+        elif M[i][j] == M[i-1][j] + penalties["*"][o1.gene[i-1]]:
             i -= 1
             results_o1 += o1.gene[i]
             results_o2 += "-"
