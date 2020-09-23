@@ -67,7 +67,7 @@ def trace_back(M, o1, o2, penalties):
             j-=1
             results_o1 += o1.gene[i]
             results_o2 += o2.gene[j]
-        elif M[i][j] == M[i-1][j] + penalties[o1.gene[i-1]]["*"]:
+        elif M[i][j] == M[i-1][j] + gap_penalty(o1.gene[i-1]):
             i -= 1
             results_o1 += o1.gene[i]
             results_o2 += "-"
