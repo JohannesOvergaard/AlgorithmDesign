@@ -35,24 +35,21 @@ def parse_input():
             current_organism.gene += line.replace("\n","")
     return organisms
 
-def gap_penalty(letter):
-    return penalties["*"][letter]
-
 def construct_table(o1, o2, penalties):
     m,n = len(o1.gene), len(o2.gene)
     M = [[0 for _ in range(n+1)] for _ in range(m+1) ]
     
     for i in range(0, m):
-        M[i+1][0] = M[i][0] + gap_penalty(o1.gene[i]) 
+        M[i+1][0] = M[i][0] + penalties["*"][o1.gene[i]]
     for j in range(0, n):
-        M[0][j+1] = M[0][j] + gap_penalty(o2.gene[j]) 
+        M[0][j+1] = M[0][j] + penalties["*"][o2.gene[j]]
 
     for i in range(m):
         for j in range(n):
             penalty = penalties[o1.gene[i]][o2.gene[j]]
             alignment = penalty + M[i][j]
-            gap1 = gap_penalty(o1.gene[i]) + M[i][j+1]
-            gap2 = gap_penalty(o2.gene[j]) + M[i+1][j]
+            gap1 = penalties["*"][o1.gene[i]] + M[i][j+1]
+            gap2 = penalties["*"][o2.gene[j]] + M[i+1][j]
             M[i+1][j+1] = max(alignment,gap1,gap2)
 
     return M
@@ -67,7 +64,7 @@ def trace_back(M, o1, o2, penalties):
             j-=1
             results_o1 += o1.gene[i]
             results_o2 += o2.gene[j]
-        elif M[i][j] == M[i-1][j] + gap_penalty(o1.gene[i-1]):
+        elif M[i][j] == M[i-1][j] + penalties["*"][o1.gene[i-1]]:
             i -= 1
             results_o1 += o1.gene[i]
             results_o2 += "-"
