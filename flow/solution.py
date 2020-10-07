@@ -112,7 +112,11 @@ def min_cut(explored):
 def print_cut(cut):
     # Only sorting to make your diff clean, dear TA :-)
     cut = sorted(cut, key=lambda e: e.source.id)
-    for e in cut: print(e)
+    sum = 0
+    for e in cut:
+        print(e)
+        sum += int(e.reverse.capacity / 2)
+    print("Flow = "+str(sum))
 
 G = parse()
 cut = max_flow(G)
