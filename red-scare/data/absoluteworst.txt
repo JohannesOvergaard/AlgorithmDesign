@@ -4314,7 +4314,7 @@ sleet
 slogs
 sleep
 crits
-tweet
+tweet *
 cushy
 under
 tweed

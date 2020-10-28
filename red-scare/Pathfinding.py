@@ -75,11 +75,13 @@ def dijkstra(G, cost):
     
     return None
 
+red_unreachable = set()
 def dfs(n: Node, t: Node, visited: set,found_red) -> list :
     v = visited.copy()
     v.add(n)
     if n == t:
         if found_red: return [n]
+        red_unreachable.update(v)
         return None
     
     for neighbor in n.neighbors:

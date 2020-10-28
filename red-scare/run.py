@@ -31,7 +31,7 @@ def some(G: Graph):
 
 
 G = parse()
-print(none(G))
-print(alternating(G))
-print(few(G))
+# print(none(G))
+# print(alternating(G))
+# print(few(G))
 print(some(G))
