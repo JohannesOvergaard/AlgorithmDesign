@@ -1,4 +1,5 @@
 import queue
+from Graph import *
 
 def bfs2(G, filt, end_condition):
     s, t = G.s, G.t

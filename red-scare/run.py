@@ -1,4 +1,7 @@
+import sys
+
 from Parser import parse
+from Graph import *
 from Pathfinding import bfs, dijkstra, dfs
 
 sys.setrecursionlimit(25000000)
