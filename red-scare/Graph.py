@@ -6,7 +6,10 @@ class Node(object):
 
     def set_neighbor(self, n):
         self.neighbors.append(n)
-
+    
+    def __lt__(self, other):
+        return True
+    
     def __str__(self):
         s = f"{self.id}\n"
         for neighbor in self.neighbors:
