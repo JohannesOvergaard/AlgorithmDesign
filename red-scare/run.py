@@ -6,7 +6,7 @@ def none(G):
     #for n in p: print(n.id)
     return -1 if p is None else len(p)
 
-def some(G):
+def some(G): pass
 
 def many(G): pass
 
