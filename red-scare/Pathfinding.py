@@ -1,13 +1,12 @@
 import queue
 from Graph import *
 
-def bfs2(G, filt, end_condition):
-    s, t = G.s, G.t
-    visited = {}
-    q = queue.Queue()
-
-    for n in G.s.neighbors:
-        if filt(s, n):
+def bfs2(s, filt, end_condition, reAddRed=False, visited = {}, q = queue.Queue()):
+    
+    if s not in visited:
+        visited[s] = None
+    for n in s.neighbors:
+        if n not in visited and  filt(s, n):
             q.put((s,n))
 
     while not q.empty():
@@ -16,15 +15,18 @@ def bfs2(G, filt, end_condition):
         for n in v.neighbors:
             if n not in visited and filt(v,n):
                 q.put((v,n))
+            elif reAddRed and n.is_red:
+                q.put((v,n))
+        
         if end_condition(v):
             path, curr = [v], v
             while curr != s:
                 path.append(visited[curr])
                 curr = visited[curr]
             path.reverse()
-            return path, visited
+            return path, visited, q
     
-    return None
+    return None, visited, q
 
 def bfs(G, filt):
     s, t = G.s, G.t

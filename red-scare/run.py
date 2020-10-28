@@ -2,7 +2,8 @@ import sys
 
 from Parser import parse
 from Graph import *
-from Pathfinding import bfs, dijkstra, dfs
+from Pathfinding import bfs, bfs2, dijkstra, dfs
+import queue
 
 sys.setrecursionlimit(25000000)
 
@@ -11,7 +12,32 @@ def none(G):
     #for n in p: print(n.id)
     return -1 if p is None else len(p)
 
-def some(G): pass
+def compute_some(G): 
+    if G.s.is_red or G.t.is_red:
+        return bfs(G, lambda x, y: not y.is_red or y == G.t)
+
+    filt     = lambda x, y: not x.is_red
+    end_cond = lambda y: y.is_red
+    filt2     = lambda x, y: True
+    end_cond2 = lambda y: y == G.t
+    p_s_r, visited, q = bfs2(G.s, filt, end_cond, reAddRed=True)
+    while(p_s_r is not None):
+        
+        queueNew = queue.Queue()        #new queue because ot python bug with next call to bfs2 overriding q
+        while(not q.empty()): queueNew.put(q.get())
+        
+        visited2 = {}
+        for v in p_s_r:
+            visited2[v] = None
+        p_r_t, _, _ = bfs2(p_s_r[-1], filt2, end_cond2, reAddRed=False, visited = visited2)
+        if p_r_t is None:            
+            while(not queueNew.empty()): q.put(queueNew.get())
+            p_s_r, visited, q = bfs2(G.s, filt, end_cond, reAddRed=True, visited = visited, q = q)
+        else:
+            p = p_s_r + p_r_t[1:]
+            return p
+            break
+    return None
 
 def many(G): pass
 
@@ -25,8 +51,8 @@ def alternating(G):
     return p != None
 
 def some(G: Graph):
-    p = dfs(G.s,G.t,set(),False)
-    # print(p)
+    p = compute_some(G)
+    print(*p)
     return p != None
 
 

@@ -11,6 +11,7 @@ class Node(object):
         return True
     
     def __str__(self):
+        return str(self.id)
         s = f"{self.id}\n"
         for neighbor in self.neighbors:
             s += f"-- {neighbor.id}\n"
