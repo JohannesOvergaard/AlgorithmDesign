@@ -1,4 +1,5 @@
 import queue
+from Graph import Graph, Node
 
 def bfs(G, filt):
     s, t = G.s, G.t
@@ -24,26 +25,30 @@ def bfs(G, filt):
             return path
     
     return None
-"""
-def bfs(n: Node, t: Node, visited: set, q):
-    visited.add(n)
-    if n == t: return [n]
-    for neighbor in n.neighbors:
-        if neighbor in visited: continue
-        path = bfs(neighbor, t, visited)
-        if path is not None:
-            path.append(n)
-            return path
-    return None
 
-def dfs(n: Node, t: Node, visited: set):
-    visited.add(n)
-    if n == t: return [n]
+# def bfs(n: Node, t: Node, visited: set, q):
+#     visited.add(n)
+#     if n == t: return [n]
+#     for neighbor in n.neighbors:
+#         if neighbor in visited: continue
+#         path = bfs(neighbor, t, visited)
+#         if path is not None:
+#             path.append(n)
+#             return path
+#     return None
+
+def dfs(n: Node, t: Node, visited: set,found_red) -> list :
+    v = visited.copy()
+    v.add(n)
+    if n == t:
+        if found_red: return [n]
+        return None
+    
     for neighbor in n.neighbors:
-        if neighbor in visited: continue
-        path = bfs(neighbor, t, visited)
-        if path is not None:
-            path.append(n)
-            return path
+        if neighbor not in v:
+            fr = found_red or n.is_red
+            path:list = dfs(neighbor, t, v, fr)
+            if path is not None:
+                path.append(n)
+                return path
     return None
-"""
