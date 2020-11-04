@@ -13,6 +13,8 @@ def none(G):
 
 
 def many(G):
+    if not G.directed:
+        return "cycles stop us"
     t_value = bellManFord(G)
     if t_value == - float("inf"):
         return "cycles stop us"
@@ -30,6 +32,12 @@ def alternating(G):
     return p != None
 
 def some(G: Graph):
+    if G.s.is_red or G.t.is_red:
+        p = bfs(G, lambda x, y:True)
+        return p is not None
+        
+    
+    
     p, contains_red = dfs(G.s,G.t)
     print(f'Found red: {contains_red}')
     for v in p:
@@ -41,5 +49,5 @@ G = parse()
 # print(none(G))
 # print(alternating(G))
 # print(few(G))
-#print(some(G))
+print(some(G))
 print(many(G))

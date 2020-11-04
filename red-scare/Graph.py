@@ -33,12 +33,13 @@ class Edge(object):
 """
 
 class Graph(object):
-    def __init__(self, s, t, allEdges, n, nodes):
+    def __init__(self, s, t, allEdges, n, nodes, directed):
         self.s = s
         self.t = t
         self.allEdges = allEdges
         self.n = n
         self.nodes = [nodes[key] for key in nodes]
+        self.directed = directed
         
     def printGraph(self):
         for n in self.nodes:
