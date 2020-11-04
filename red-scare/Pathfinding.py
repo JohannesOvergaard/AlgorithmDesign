@@ -13,7 +13,7 @@ def bfs2(s, filt, end_condition, reAddRed=False, visited = {}, q = queue.Queue()
         u,v = q.get()
         visited[v] = u 
         for n in v.neighbors:
-            if n not in visited and filt(v,n):
+            if n not in visited and filt(dfsv,n):
                 q.put((v,n))
             elif reAddRed and n.is_red:
                 q.put((v,n))
@@ -76,6 +76,36 @@ def dijkstra(G, cost):
             return path
     
     return None
+
+
+def bellManFord(G):
+    s = G.s
+    n = G.n
+    v = len(G.allEdges)
+    s.value =  0
+    for i in range(n-1):
+        for (u,v) in G.allEdges:        #(u,v)
+            uv = u.value
+            vv = v.value
+            ecost = -1 if u.is_red else 0
+            v.value = min(uv + ecost, vv)
+    
+    for i in range(n-1):
+        for (u,v) in G.allEdges:        #(u,v)
+            uv = u.value
+            vv = v.value
+            ecost = -1 if u.is_red else 0
+            if uv + ecost < vv:
+                v.value = - float("inf")
+    return G.t.value            
+
+
+
+
+
+
+
+
 
 # tail_recursion.py
 # Boilerplate for doing actual tail recursion in python. Taken from https://chrispenner.ca/posts/python-tail-recursion

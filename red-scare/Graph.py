@@ -3,6 +3,7 @@ class Node(object):
         self.id = config[0]
         self.is_red = len(config) == 2
         self.neighbors = []
+        self.value = float('inf')
 
     def set_neighbor(self, n):
         self.neighbors.append(n)
@@ -11,10 +12,10 @@ class Node(object):
         return True
     
     def __str__(self):
-        return str(self.id)
-        s = f"{self.id}\n"
-        for neighbor in self.neighbors:
-            s += f"-- {neighbor.id}\n"
+        #return str(self.id)
+        s = f"{self.id} v={self.value}\n"
+        #for neighbor in self.neighbors:
+        #    s += f"-- {neighbor.id}\n"
         return s
 """
 class Edge(object):
@@ -32,6 +33,13 @@ class Edge(object):
 """
 
 class Graph(object):
-    def __init__(self, s, t):
+    def __init__(self, s, t, allEdges, n, nodes):
         self.s = s
         self.t = t
+        self.allEdges = allEdges
+        self.n = n
+        self.nodes = [nodes[key] for key in nodes]
+        
+    def printGraph(self):
+        for n in self.nodes:
+            print(n)

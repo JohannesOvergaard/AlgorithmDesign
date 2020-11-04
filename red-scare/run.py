@@ -12,7 +12,13 @@ def none(G):
     return -1 if p is None else len(p)
 
 
-def many(G): pass
+def many(G):
+    t_value = bellManFord(G)
+    if t_value == - float("inf"):
+        return "cycles stop us"
+    if t_value == float("inf"):
+        return "t is not attached to s"
+    return abs(t_value)
 
 def few(G):
     p = dijkstra(G, lambda x, y: 1 if y.is_red else 0)
@@ -35,4 +41,5 @@ G = parse()
 # print(none(G))
 # print(alternating(G))
 # print(few(G))
-print(some(G))
+#print(some(G))
+print(many(G))
