@@ -77,21 +77,69 @@ def dijkstra(G, cost):
     
     return None
 
-red_unreachable = set()
-def dfs(n: Node, t: Node, visited: set,found_red) -> list :
-    v = visited.copy()
-    v.add(n)
-    if n == t:
-        if found_red: return [n]
-        red_unreachable.update(v)
-        return None
-    
-    for neighbor in n.neighbors:
-        if neighbor not in v:
-            fr = found_red or n.is_red
-            path:list = dfs(neighbor, t, v, fr)
-            if path is not None:
-                path.append(n)
-                return path
-    return None
+# tail_recursion.py
+# Boilerplate for doing actual tail recursion in python. Taken from https://chrispenner.ca/posts/python-tail-recursion
+class Recurse(Exception):
+    def __init__(self, *args, **kwargs):
+        self.args = args
+        self.kwargs = kwargs
 
+
+def recurse(*args, **kwargs):
+    raise Recurse(*args, **kwargs)
+
+
+def tail_recursive(f):
+    def decorated(*args, **kwargs):
+        while True:
+            try:
+                return f(*args, **kwargs)
+            except Recurse as r:
+                args = r.args
+                kwargs = r.kwargs
+                continue
+
+    return decorated
+
+
+def dfs(n: Node, t: Node) -> list:
+    q = queue.LifoQueue()
+    q.put(n)
+    return dfs_helper(q, set(), set(), [], t, False)
+
+
+@tail_recursive
+def dfs_helper(stack: queue.LifoQueue, visited: set, visited_path: set, acc: list, t: Node, found_red: bool):
+    if stack.empty():  # No path s-t, was found that contained a red node
+        return [], found_red
+    else:
+        current: Node = stack.get()
+        if current in visited and not found_red or current in visited_path:  # Not sure  if this check is correct :/
+            recurse(stack, visited, visited_path, acc, t, found_red)
+        elif current == t:  # Found the target node
+            if found_red:  # Encountered a red node in the path
+                acc.append(current)
+                return acc, found_red
+            else:
+                path = path_until_last_branch(acc)  # Determines a what node the latest branching in the path occurred
+                recurse(stack, visited, visited_path, path, t, found_red)
+        else:
+            for neighbor in current.neighbors:
+                if neighbor not in visited or (found_red and current in visited_path):
+                    stack.put(neighbor)
+            if current.is_red:
+                found_red = True
+            acc.append(current)
+            visited_path.add(current)
+            visited.add(current)
+            recurse(stack, visited, visited_path, acc, t, found_red)
+
+
+def path_until_last_branch(path: list):
+    length = len(path) - 1
+    for i in range(length, 0, -1):
+        if len(path[i].neighbors) > 1:
+            return path[0:i]
+    return []
+
+    
