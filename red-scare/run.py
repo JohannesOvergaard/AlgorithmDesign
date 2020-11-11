@@ -40,9 +40,7 @@ def some(G: Graph):
 
     for i in range(len(G.nodes)):
         if not G.nodes[i].is_red: continue
-        print("Before deep copy")
         fg = G.flow_graph()
-        print("After deep copy")
         fg = G.flow_graph()
         node = fg.nodes[i]
         super_source = Node(["super_source"])
