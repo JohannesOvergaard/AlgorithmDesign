@@ -2,7 +2,6 @@ import queue
 from Graph import *
 
 def bfs2(s, filt, end_condition, reAddRed=False, visited = {}, q = queue.Queue()):
-    
     if s not in visited:
         visited[s] = None
     for n in s.neighbors:
@@ -77,21 +76,20 @@ def dijkstra(G, cost):
     
     return None
 
-
-def bellManFord(G):
+def bellman_ford(G):
     s = G.s
     n = G.n
-    v = len(G.allEdges)
+    v = len(G.all_edges)
     s.value =  0
-    for i in range(n-1):
-        for (u,v) in G.allEdges:        #(u,v)
+    for _ in range(n-1):
+        for (u,v) in G.all_edges:
             uv = u.value
             vv = v.value
             ecost = -1 if u.is_red else 0
             v.value = min(uv + ecost, vv)
     
-    for i in range(n-1):
-        for (u,v) in G.allEdges:        #(u,v)
+    for _ in range(n-1):
+        for (u,v) in G.all_edges:
             uv = u.value
             vv = v.value
             ecost = -1 if u.is_red else 0
