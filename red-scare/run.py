@@ -1,16 +1,13 @@
 import sys
-import copy
+sys.setrecursionlimit(2500000)
 
 from Parser import parse
 from Graph import Graph, Edge, Node
 from Pathfinding import bfs, dfs, dijkstra, bellman_ford
 from Flow import max_flow
 
-sys.setrecursionlimit(2500000)
-
 def none(G):
     p = bfs(G, lambda x, y: not y.is_red or y == G.t)
-    #for n in p: print(n.id)
     return -1 if p is None else len(p)
 
 def many(G):
@@ -29,7 +26,6 @@ def few(G):
 
 def alternating(G):
     p = bfs(G, lambda x, y: x.is_red != y.is_red)
-    #for n in p: print(n.id)
     return p != None
 
 def some(G: Graph):
@@ -44,6 +40,9 @@ def some(G: Graph):
 
     for i in range(len(G.nodes)):
         if not G.nodes[i].is_red: continue
+        print("Before deep copy")
+        fg = G.flow_graph()
+        print("After deep copy")
         fg = G.flow_graph()
         node = fg.nodes[i]
         super_source = Node(["super_source"])
@@ -53,6 +52,7 @@ def some(G: Graph):
         node.neighbors[0].capacity = 2
         fg.s = super_source        
         if max_flow(fg) == 2: return True
+
     return False
 
 G = parse()

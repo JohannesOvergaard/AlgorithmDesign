@@ -1,31 +1,5 @@
 import queue
-from Graph import *
-
-def bfs2(s, filt, end_condition, reAddRed=False, visited = {}, q = queue.Queue()):
-    if s not in visited:
-        visited[s] = None
-    for n in s.neighbors:
-        if n not in visited and  filt(s, n):
-            q.put((s,n))
-
-    while not q.empty():
-        u,v = q.get()
-        visited[v] = u 
-        for n in v.neighbors:
-            if n not in visited and filt(dfsv,n):
-                q.put((v,n))
-            elif reAddRed and n.is_red:
-                q.put((v,n))
-        
-        if end_condition(v):
-            path, curr = [v], v
-            while curr != s:
-                path.append(visited[curr])
-                curr = visited[curr]
-            path.reverse()
-            return path, visited, q
-    
-    return None, visited, q
+from Graph import Graph, Edge, Node
 
 def bfs(G, filt):
     s, t = G.s, G.t
@@ -33,15 +7,13 @@ def bfs(G, filt):
     q = queue.Queue()
 
     for n in G.s.neighbors:
-        if filt(s, n):
-            q.put((s,n))
+        if filt(s, n): q.put((s,n))
 
     while not q.empty():
         u,v = q.get()
+        if v in visited: continue
         visited[v] = u 
-        for n in v.neighbors:
-            if n not in visited and filt(v,n):
-                q.put((v,n))
+
         if v == t:
             path, curr = [t], t
             while curr != s:
@@ -49,6 +21,10 @@ def bfs(G, filt):
                 curr = visited[curr]
             path.reverse()
             return path
+        
+        for n in v.neighbors:
+            if n not in visited and filt(v,n):
+                q.put((v,n))
     
     return None
 
