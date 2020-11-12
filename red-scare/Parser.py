@@ -1,25 +1,26 @@
 from sys import stdin
-from Graph import *
+from Graph import Graph, Node
 
 def parse() -> Graph:
     num_nodes, num_edges, _ = map(int, input().rsplit())
-    s, t = input().rsplit()
-    nodes = {}
-    allEdges = []
-    directed = True
+    s_id, t_id = input().rsplit()
+    nodes, edges, is_directed = {}, [], True
+
     for _ in range(num_nodes):
-        n = Node(input().rsplit())
-        nodes[n.id] = n
+        split = input().rsplit()
+        id, is_red = split[0], len(split) == 2
+        node = Node(id, is_red)
+        nodes[node.id] = node
 
     for _ in range(num_edges):
         n1, e, n2 = input().rsplit()
         n1, n2 = nodes[n1], nodes[n2]
         n1.set_neighbor(n2)
-        allEdges.append((n1,n2))
+        edges.append((n1,n2))
         if e == "--":
-            directed = False
+            is_directed = False
             n2.set_neighbor(n1)
-            allEdges.append((n2,n1))
+            edges.append((n2,n1))
 
-    s, t = nodes[s], nodes[t]
-    return Graph(s, t, allEdges, len(nodes), nodes, directed)
+    s, t = nodes[s_id], nodes[t_id]
+    return Graph(s, t, edges, nodes, is_directed)

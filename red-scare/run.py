@@ -4,14 +4,14 @@ sys.setrecursionlimit(2500000)
 from Parser import parse
 from Graph import Graph, Edge, Node
 from Pathfinding import bfs, dfs, dijkstra, bellman_ford
-from Flow import max_flow
+from Flow import max_flow, construct_flow_graph, reset_flow_graph
 
 def none(G):
     p = bfs(G, lambda x, y: not y.is_red or y == G.t)
     return -1 if p is None else len(p)
 
 def many(G):
-    if not G.directed:
+    if not G.is_directed:
         return "cycles stop us"
     t_value = bellman_ford(G)
     if t_value == - float("inf"):
@@ -32,25 +32,17 @@ def some(G: Graph):
     if G.s.is_red or G.t.is_red:
         p = bfs(G, lambda x, y:True)
         return p is not None
-    if G.directed:
+    if G.is_directed:
         val = many(G)
         if type(val) != str and val > 0:
             return True
         return False
-
-    for i in range(len(G.nodes)):
-        if not G.nodes[i].is_red: continue
-        fg = G.flow_graph()
-        fg = G.flow_graph()
-        node = fg.nodes[i]
-        super_source = Node(["super_source"])
-        edge = Edge(super_source, node)
-        edge.capacity = 2
-        super_source.neighbors.append(edge)
-        node.neighbors[0].capacity = 2
-        fg.s = super_source        
-        if max_flow(fg) == 2: return True
-
+    
+    for node in G.nodes:
+        if not node.is_red: continue
+        G = construct_flow_graph(G, node)
+        if max_flow(G) == 2: return True
+        G = reset_flow_graph(G)
     return False
 
 G = parse()
@@ -59,4 +51,3 @@ print("Few:", few(G))
 print("Many:", many(G))
 print("None:", none(G))
 print("Some:", some(G))
-print()

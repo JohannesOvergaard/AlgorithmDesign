@@ -54,18 +54,18 @@ def dijkstra(G, cost):
 
 def bellman_ford(G):
     s = G.s
-    n = G.n
-    v = len(G.all_edges)
+    n = len(G.nodes)
+    v = len(G.edges)
     s.value =  0
     for _ in range(n-1):
-        for (u,v) in G.all_edges:
+        for (u,v) in G.edges:
             uv = u.value
             vv = v.value
             ecost = -1 if u.is_red else 0
             v.value = min(uv + ecost, vv)
     
     for _ in range(n-1):
-        for (u,v) in G.all_edges:
+        for (u,v) in G.edges:
             uv = u.value
             vv = v.value
             ecost = -1 if u.is_red else 0

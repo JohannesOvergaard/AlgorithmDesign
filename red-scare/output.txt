@@ -1,0 +1,1085 @@
+../data/G-ex-directed
+Alternating: True
+Few: 0
+Many: 2
+None: 4
+Some: True
+
+../data/G-ex
+Alternating: True
+Few: 0
+Many: cycles stop us
+None: 4
+Some: True
+
+../data/P3
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/bht
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/common-1-100
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-1-1000
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-1-1500
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-1-20
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/common-1-2000
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-1-250
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-1-2500
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/common-1-3000
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/common-1-3500
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/common-1-4000
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/common-1-4500
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/common-1-50
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-1-500
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-1-5000
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/common-1-5757
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/common-2-100
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-2-1000
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-1500
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-20
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-2-2000
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-250
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-2-2500
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-3000
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-3500
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-4000
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-4500
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-50
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/common-2-500
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-5000
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/common-2-5757
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/dodecahedron
+Alternating: False
+Few: 2
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/gnm-10-15-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/gnm-10-15-1
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/gnm-10-20-0
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: 4
+Some: True
+
+../data/gnm-10-20-1
+Alternating: True
+Few: 2
+Many: cycles stop us
+None: 4
+Some: True
+
+../data/gnm-1000-1500-0
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/gnm-1000-1500-1
+Alternating: False
+Few: 2
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/gnm-1000-2000-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 8
+Some: True
+
+../data/gnm-1000-2000-1
+Alternating: False
+Few: 2
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/gnm-2000-3000-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 9
+Some: True
+
+../data/gnm-2000-3000-1
+Alternating: True
+Few: 2
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/gnm-2000-4000-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/gnm-2000-4000-1
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 6
+Some: True
+
+../data/gnm-3000-4500-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 11
+Some: True
+
+../data/gnm-3000-4500-1
+Alternating: False
+Few: 2
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/gnm-3000-6000-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/gnm-3000-6000-1
+Alternating: False
+Few: 2
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/gnm-4000-6000-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 8
+Some: True
+
+../data/gnm-4000-6000-1
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: 16
+Some: True
+
+../data/gnm-4000-8000-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 6
+Some: True
+
+../data/gnm-4000-8000-1
+Alternating: True
+Few: 2
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/gnm-5000-10000-0
+Alternating: False
+Few: 2
+Many: cycles stop us
+None: 6
+Some: True
+
+../data/gnm-5000-10000-1
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 6
+Some: True
+
+../data/gnm-5000-7500-0
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/gnm-5000-7500-1
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/grid-10-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 50
+Some: True
+
+../data/grid-10-1
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 30
+Some: True
+
+../data/grid-10-2
+Alternating: True
+Few: 2
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/grid-25-0
+Alternating: True
+Few: 0
+Many: cycles stop us
+None: 325
+Some: True
+
+../data/grid-25-1
+Alternating: True
+Few: 0
+Many: cycles stop us
+None: 124
+Some: True
+
+../data/grid-25-2
+Alternating: True
+Few: 6
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/grid-5-0
+Alternating: True
+Few: 0
+Many: cycles stop us
+None: 15
+Some: True
+
+../data/grid-5-1
+Alternating: True
+Few: 0
+Many: cycles stop us
+None: 9
+Some: True
+
+../data/grid-5-2
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/grid-50-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 1250
+Some: True
+
+../data/grid-50-1
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 522
+Some: True
+
+../data/grid-50-2
+Alternating: False
+Few: 11
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/increase-n10-1
+Alternating: True
+Few: 1
+Many: 1
+None: 2
+Some: True
+
+../data/increase-n10-2
+Alternating: True
+Few: 2
+Many: 2
+None: 2
+Some: True
+
+../data/increase-n10-3
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/increase-n100-1
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/increase-n100-2
+Alternating: True
+Few: 2
+Many: 12
+None: 2
+Some: True
+
+../data/increase-n100-3
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/increase-n20-1
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/increase-n20-2
+Alternating: True
+Few: 1
+Many: 5
+None: 2
+Some: True
+
+../data/increase-n20-3
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/increase-n50-1
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/increase-n50-2
+Alternating: True
+Few: 1
+Many: 4
+None: 2
+Some: True
+
+../data/increase-n50-3
+Alternating: True
+Few: 1
+Many: 3
+None: 2
+Some: True
+
+../data/increase-n500-1
+Alternating: True
+Few: 2
+Many: 15
+None: 2
+Some: True
+
+../data/increase-n500-2
+Alternating: True
+Few: 1
+Many: 16
+None: 2
+Some: True
+
+../data/increase-n500-3
+Alternating: True
+Few: 1
+Many: 15
+None: 2
+Some: True
+
+../data/increase-n8-1
+Alternating: True
+Few: 1
+Many: 1
+None: 2
+Some: True
+
+../data/increase-n8-2
+Alternating: True
+Few: 1
+Many: 1
+None: 2
+Some: True
+
+../data/increase-n8-3
+Alternating: True
+Few: 0
+Many: 1
+None: 2
+Some: True
+
+../data/rusty-1-17
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 11
+Some: True
+
+../data/rusty-1-2000
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/rusty-1-2500
+Alternating: False
+Few: -1
+Many: cycles stop us
+None: -1
+Some: False
+
+../data/rusty-1-3000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 15
+Some: True
+
+../data/rusty-1-3500
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 15
+Some: True
+
+../data/rusty-1-4000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 14
+Some: True
+
+../data/rusty-1-4500
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 8
+Some: True
+
+../data/rusty-1-5000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 8
+Some: True
+
+../data/rusty-1-5757
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 8
+Some: True
+
+../data/rusty-2-2000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 6
+Some: True
+
+../data/rusty-2-2500
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/rusty-2-3000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/rusty-2-3500
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/rusty-2-4000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/rusty-2-4500
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/rusty-2-5000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/rusty-2-5757
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/ski-illustration
+Alternating: False
+Few: 0
+Many: 1
+None: 9
+Some: True
+
+../data/ski-level10-1
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/ski-level10-2
+Alternating: False
+Few: 1
+Many: 4
+None: -1
+Some: True
+
+../data/ski-level10-3
+Alternating: False
+Few: 4
+Many: 7
+None: -1
+Some: True
+
+../data/ski-level20-1
+Alternating: False
+Few: 3
+Many: 10
+None: -1
+Some: True
+
+../data/ski-level20-2
+Alternating: False
+Few: 10
+Many: 13
+None: -1
+Some: True
+
+../data/ski-level20-3
+Alternating: False
+Few: -1
+Many: t is not attached to s
+None: -1
+Some: False
+
+../data/ski-level3-1
+Alternating: True
+Few: 1
+Many: 3
+None: 6
+Some: True
+
+../data/ski-level3-2
+Alternating: False
+Few: 0
+Many: 1
+None: 6
+Some: True
+
+../data/ski-level3-3
+Alternating: False
+Few: 0
+Many: 1
+None: 6
+Some: True
+
+../data/ski-level5-1
+Alternating: False
+Few: 1
+Many: 3
+None: -1
+Some: True
+
+../data/ski-level5-2
+Alternating: False
+Few: 1
+Many: 2
+None: -1
+Some: True
+
+../data/ski-level5-3
+Alternating: False
+Few: 0
+Many: 0
+None: 8
+Some: False
+
+../data/smallworld-10-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 7
+Some: True
+
+../data/smallworld-10-1
+Alternating: True
+Few: 0
+Many: cycles stop us
+None: 9
+Some: True
+
+../data/smallworld-20-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 9
+Some: True
+
+../data/smallworld-20-1
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 15
+Some: True
+
+../data/smallworld-3-0
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: 5
+Some: True
+
+../data/smallworld-3-1
+Alternating: False
+Few: 1
+Many: cycles stop us
+None: 3
+Some: True
+
+../data/smallworld-30-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 10
+Some: True
+
+../data/smallworld-30-1
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 12
+Some: True
+
+../data/smallworld-40-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 9
+Some: True
+
+../data/smallworld-40-1
+Alternating: True
+Few: 1
+Many: cycles stop us
+None: 14
+Some: True
+
+../data/smallworld-50-0
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 4
+Some: True
+
+../data/smallworld-50-1
+Alternating: True
+Few: 2
+Many: cycles stop us
+None: -1
+Some: True
+
+../data/wall-n-1
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-n-10
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-n-100
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-n-1000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-n-10000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-n-2
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-n-3
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-n-4
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-p-1
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-p-10
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-p-100
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-p-1000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-p-10000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-p-2
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-p-3
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-p-4
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-z-1
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: True
+
+../data/wall-z-10
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-z-100
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-z-1000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-z-10000
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-z-2
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-z-3
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
+../data/wall-z-4
+Alternating: False
+Few: 0
+Many: cycles stop us
+None: 2
+Some: False
+
