@@ -2,7 +2,7 @@ import sys
 sys.setrecursionlimit(2500000)
 
 from Parser import parse
-from Graph import Graph, Edge, Node
+from Graph import Graph, Node
 from Pathfinding import bfs, dfs, dijkstra, bellman_ford
 from Flow import max_flow, construct_flow_graph, reset_flow_graph
 

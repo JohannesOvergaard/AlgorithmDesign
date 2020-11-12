@@ -1,5 +1,3 @@
-from copy import copy, deepcopy
-
 class Node(object):
     def __init__(self, id: str, is_red: bool):
         self.id = id
