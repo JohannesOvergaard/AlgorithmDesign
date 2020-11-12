@@ -37,7 +37,7 @@ def some(G: Graph):
         if type(val) != str and val > 0:
             return True
         return False
-    
+        
     for node in G.nodes:
         if not node.is_red: continue
         G = construct_flow_graph(G, node)
