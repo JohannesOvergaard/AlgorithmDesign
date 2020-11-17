@@ -34,9 +34,9 @@ def some(G: Graph):
         return p is not None
     if G.is_directed:
         val = many(G)
-        if type(val) != str and val > 0:
-            return True     #todo should we return val > 0
-        return False        #todo should we return val to not confuse False with error message
+        if type(val) != str:
+            return val > 0
+        return val        
         
     for node in G.nodes:
         if not node.is_red: continue

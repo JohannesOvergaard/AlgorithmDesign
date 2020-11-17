@@ -521,7 +521,7 @@ Alternating: False
 Few: -1
 Many: t is not attached to s
 None: -1
-Some: False
+Some: t is not attached to s
 
 ../data/increase-n100-2
 Alternating: True
@@ -556,7 +556,7 @@ Alternating: False
 Few: -1
 Many: t is not attached to s
 None: -1
-Some: False
+Some: t is not attached to s
 
 ../data/increase-n50-1
 Alternating: False
@@ -752,7 +752,7 @@ Alternating: False
 Few: -1
 Many: t is not attached to s
 None: -1
-Some: False
+Some: t is not attached to s
 
 ../data/ski-level10-2
 Alternating: False
@@ -787,7 +787,7 @@ Alternating: False
 Few: -1
 Many: t is not attached to s
 None: -1
-Some: False
+Some: t is not attached to s
 
 ../data/ski-level3-1
 Alternating: True
