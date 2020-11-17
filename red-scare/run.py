@@ -35,8 +35,8 @@ def some(G: Graph):
     if G.is_directed:
         val = many(G)
         if type(val) != str and val > 0:
-            return True
-        return False
+            return True     #todo should we return val > 0
+        return False        #todo should we return val to not confuse False with error message
         
     for node in G.nodes:
         if not node.is_red: continue
