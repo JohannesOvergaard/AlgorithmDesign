@@ -12,12 +12,12 @@ def none(G):
 
 def many(G):
     if not G.is_directed:
-        return "cycles stop us"
+        return "-"      #cycles stop us
     t_value = bellman_ford(G)
     if t_value == - float("inf"):
-        return "cycles stop us"
+        return "-"      #cycles stop us
     if t_value == float("inf"):
-        return "t is not attached to s"
+        return -1
     return abs(t_value)
 
 def few(G):
@@ -35,6 +35,8 @@ def some(G: Graph):
     if G.is_directed:
         val = many(G)
         if type(val) != str:
+            if val == -1:
+                return False
             return val > 0
         return val        
         
@@ -46,8 +48,11 @@ def some(G: Graph):
     return False
 
 G = parse()
+"""
 print("Alternating:", alternating(G))
 print("Few:", few(G))
 print("Many:", many(G))
 print("None:", none(G))
-print("Some:", some(G))
+print("Some:", some(G))"""
+
+print(*[len(G.nodes), alternating(G), few(G), many(G), none(G), some(G),""], sep='\t')
