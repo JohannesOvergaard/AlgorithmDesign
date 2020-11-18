@@ -55,4 +55,4 @@ print("Many:", many(G))
 print("None:", none(G))
 print("Some:", some(G))"""
 
-print(*[len(G.nodes), alternating(G), few(G), many(G), none(G), some(G),""], sep='\t')
+print(*["",len(G.nodes), alternating(G), few(G), many(G), none(G), some(G)], sep=' & ')
